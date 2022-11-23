@@ -1,0 +1,36 @@
+﻿@model VentasEntradas2022.Web.Models.Empleado.EmpleadoEditVm
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Borrar Empleado</h2>
+
+<h3>¿Está seguro que desea borrar el empleado seleccionado?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoYNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoYNombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-info" /> |
+            @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>
+
+
+

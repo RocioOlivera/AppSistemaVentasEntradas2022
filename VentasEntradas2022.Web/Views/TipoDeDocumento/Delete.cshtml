@@ -1,0 +1,36 @@
+﻿@model VentasEntradas2022.Web.Models.TipoDeDocumento.TipoDeDocumentoEditVm
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Borrar Tipo de Documento</h2>
+
+<h3>¿Está seguro que desea borrar la Forma de Pago seleccionada?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDeDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDeDoc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-info" /> |
+            @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>
+
+
+
